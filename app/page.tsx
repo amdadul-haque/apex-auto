@@ -8,7 +8,6 @@ export default function Home() {
       <AboutUs />
       <RestyleShop />
       <Gallery />
-      <h2 className="text-red-500 text-9xl">Heoo</h2>
     </main>
   );
 }
