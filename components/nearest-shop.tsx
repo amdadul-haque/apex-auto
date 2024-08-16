@@ -7,123 +7,12 @@ import { LuMapPin } from 'react-icons/lu'
 import { Button } from './core'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { nearestShops } from '@/data'
 
 type Props = {}
 
 const NearestShop = (props: Props) => {
-  const nearestShops = [
-    {
-      name: "Momos Garage",
-      description: "We expertly service and customize all vehicle models, ensuring every ride gets the care it deserves.",
-      images: ["/images/nearest-shop/1.png", "/images/nearest-shop/2.png", "/images/nearest-shop/3.png"],
-      services: [
-        {
-          icon: "/images/nearest-shop/services/1.svg",
-          name: "Brakes"
-        },
-        {
-          icon: "/images/nearest-shop/services/2.svg",
-          name: "Diagnostics & <br/> Inspection"
-        },
-        {
-          icon: "/images/nearest-shop/services/3.svg",
-          name: "Fluid <br> Services"
-        },
-        {
-          icon: "/images/nearest-shop/services/4.svg",
-          name: "General <br> Maintenance"
-        },
-        {
-          icon: "/images/nearest-shop/services/5.svg",
-          name: "Starting & <br> Charging"
-        },
-        {
-          icon: "/images/nearest-shop/services/6.svg",
-          name: "Steering & <br> Suspension"
-        },
-        {
-          icon: "/images/nearest-shop/services/7.svg",
-          name: "Wheels & <br> Tires"
-        },
-      ],
-      hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM', ''],
-      location: ""
-    },
-    {
-      name: "Euromatic",
-      description: "We specialize in servicing top European brands like Mercedes, BMW, Audi, and more.",
-      images: ["/images/nearest-shop/3.png", "/images/nearest-shop/2.png", "/images/nearest-shop/1.png"],
-      services: [
-        {
-          icon: "/images/nearest-shop/services/1.svg",
-          name: "Brakes"
-        },
-        {
-          icon: "/images/nearest-shop/services/2.svg",
-          name: "Diagnostics & <br> Inspection"
-        },
-        {
-          icon: "/images/nearest-shop/services/3.svg",
-          name: "Fluid <br> Services"
-        },
-        {
-          icon: "/images/nearest-shop/services/4.svg",
-          name: "General <br> Maintenance"
-        },
-        {
-          icon: "/images/nearest-shop/services/5.svg",
-          name: "Starting & <br> Charging"
-        },
-        {
-          icon: "/images/nearest-shop/services/6.svg",
-          name: "Steering & <br> Suspension"
-        },
-        {
-          icon: "/images/nearest-shop/services/7.svg",
-          name: "Wheels & <br> Tires"
-        },
-      ],
-      hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM', ''],
-      location: ""
-    },
-    {
-      name: "Dundas 427 Automotive",
-      description: "Your Trusted Destination for Expert Automotive Care at Dundas 427 Automotive.",
-      images: ["/images/nearest-shop/2.png", "/images/nearest-shop/3.png", "/images/nearest-shop/1.png"],
-      services: [
-        {
-          icon: "/images/nearest-shop/services/1.svg",
-          name: "Brakes"
-        },
-        {
-          icon: "/images/nearest-shop/services/2.svg",
-          name: "Diagnostics & <br> Inspection"
-        },
-        {
-          icon: "/images/nearest-shop/services/3.svg",
-          name: "Fluid <br> Services"
-        },
-        {
-          icon: "/images/nearest-shop/services/4.svg",
-          name: "General <br> Maintenance"
-        },
-        {
-          icon: "/images/nearest-shop/services/5.svg",
-          name: "Starting & <br> Charging"
-        },
-        {
-          icon: "/images/nearest-shop/services/6.svg",
-          name: "Steering & <br> Suspension"
-        },
-        {
-          icon: "/images/nearest-shop/services/7.svg",
-          name: "Wheels & <br> Tires"
-        },
-      ],
-      hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM', ''],
-      location: ""
-    },
-  ]
+  
 
 
   const [loading, setLoading] = useState(true)
@@ -213,15 +102,15 @@ const NearestShop = (props: Props) => {
     })
   }
   return (
-    <div className='bg-[#EBEBEB] py-16 md:py-20 lg:py-24 xl:py-[120px]'>
+    <div id='shops' className='bg-[#EBEBEB] py-16 md:py-20 lg:py-24 xl:py-[120px]'>
       <div className='layout flex flex-col gap-8 md:gap-12 lg:gap-14 xl:gap-[60px]'>
         <h2 className='section-heading text-black-1'> Find Your Nearest <br />
           Automotive Restyling Shop</h2>
         <div className='flex flex-col gap-10'>
           {nearestShops.map((shop, index) => (
-            <div key={index} className='bg-white rounded-2xl flex flex-col lg:flex-row h-full'>
+            <div key={index} className='bg-white rounded-2xl flex flex-col md:flex-row h-full'>
 
-              <div className='min-h-full aspect-[520/543] relative'>
+              <div className='md:w-[40%] min-h-full aspect-[520/543] relative'>
                 <button
                   className='size-9 flex items-center justify-center bg-white absolute left-4 top-1/2 -translate-y-1/2 rounded-xl'
                   onClick={() => showPrevImage(index)}
@@ -229,7 +118,7 @@ const NearestShop = (props: Props) => {
                   <BsChevronLeft className='text-black-1 text-xl' />
                 </button>
                 {loadingStates[index] && (
-                  <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-gray-100 border border-white  rounded-s-none rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl'>
+                  <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-gray-100 border border-white   rounded-t-2xl md:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl'>
                     <AiOutlineLoading3Quarters className='absolute inset-0 m-auto text-4xl text-gray-500 animate-spin' />
                   </div>
                 )}
@@ -238,7 +127,7 @@ const NearestShop = (props: Props) => {
                   alt='shop'
                   width={520}
                   height={543}
-                  className={`w-full lg:w-auto lg:h-full aspect-[520/543] object-cover rounded-s-none rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl ${loadingStates[index] ? 'opacity-0' : 'opacity-100'}`}
+                  className={`w-full md:w-auto md:h-full aspect-[520/543] object-cover rounded-s-none rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl ${loadingStates[index] ? 'opacity-0' : 'opacity-100'}`}
                   onLoadingComplete={() => handleLoadingComplete(index)}
                 />
 
@@ -250,7 +139,7 @@ const NearestShop = (props: Props) => {
                 </button>
               </div>
 
-              <div className='px-4 py-5 md:p-6 md:py-7 xl:px-8 xl:py-10 flex flex-col gap-6 xl:gap-10'>
+              <div className='md:w-[60%] px-4 py-5 md:p-6 md:py-7 xl:px-8 xl:py-10 flex flex-col gap-6 xl:gap-10'>
                 <div className='flex flex-col gap-5'>
                   <h3 className='text-black-1 text-lg lg:xl xl:text-2xl !leading-none font-semibold'>{shop?.name}</h3>
                   <p className='text-gray-1 text-[12px] md:text-sm'>{shop?.description}</p>
@@ -305,23 +194,27 @@ const NearestShop = (props: Props) => {
           ))}
         </div>
         <div className='flex justify-center items-center gap-4'>
-          <Image
-            src='/images/appstore-black.svg'
-            alt='location'
-            width={242}
-            height={70}
-            className='w-auto h-[40px] md:h-auto max-h-[70px]'
-          />
-          <Image
-            src='/images/playstore-black.svg'
-            alt='location'
-            width={193}
-            height={70}
-            className='w-auto h-[40px] md:h-auto max-h-[70px]'
-          />
+          <Link href='https://'>
+            <Image
+              src='/images/common/appstore-black.svg'
+              alt='location'
+              width={242}
+              height={70}
+              className='w-auto h-10 md:h-auto xl:h-[70px]'
+            />
+          </Link>
+          <Link href='https://'>
+            <Image
+              src='/images/common/playstore-black.svg'
+              alt='location'
+              width={242}
+              height={70}
+              className='w-auto h-10 md:h-auto xl:h-[70px]'
+            />
+          </Link>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

@@ -24,7 +24,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  aspect-ratio: 1920/804;
+  /* aspect-ratio: 1920/804; */
 }
 
 .about {
@@ -32,8 +32,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  aspect-ratio: 1920/820;
-  backdrop-filter: blur(100px);
+  /* aspect-ratio: 1920/820; */
 }
 
 @media screen and (max-width: 767px) {
@@ -44,4 +43,8 @@
     background-size: cover;
   }
 
+}
+
+body{
+  overflow-x: hidden;
 }

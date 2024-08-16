@@ -24,18 +24,6 @@ const Gallery = (props: Props) => {
   const closeModal = () => {
     setFullImageIndex(null)
   }
-
-  // const showPrevImage = () => {
-  //   if (fullImageIndex !== null) {
-  //     setFullImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : galleryImages.length - 1))
-  //   }
-  // }
-
-  // const showNextImage = () => {
-  //   if (fullImageIndex !== null) {
-  //     setFullImageIndex((prevIndex) => (prevIndex < galleryImages.length - 1 ? prevIndex + 1 : 0))
-  //   }
-  // }
   const showPrevImage = () => {
     if (fullImageIndex !== null) {
       const prevIndex = fullImageIndex > 0 ? fullImageIndex - 1 : galleryImages.length - 1
@@ -52,7 +40,7 @@ const Gallery = (props: Props) => {
 
   
   return (
-    <div className='bg-[#EBEBEB] py-16 md:py-20 lg:py-24 xl:py-[120px]'>
+    <div id='gallery' className='bg-[#EBEBEB] py-16 md:py-20 lg:py-24 xl:py-[120px]'>
       <div className='layout flex flex-col gap-8 md:gap-12 lg:gap-14 xl:gap-[60px]'>
         <h2 className='section-heading text-black-1'>Gallery</h2>
         <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4'>
