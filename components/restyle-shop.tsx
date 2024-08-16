@@ -39,7 +39,7 @@ const RestyleShop = (props: Props) => {
 
     setTimeout(() => {
       setPause(false);
-    }, 6000);
+    }, 4000);
   };
 
   return (
@@ -63,11 +63,11 @@ const RestyleShop = (props: Props) => {
             ))}
           </div>
           <motion.div
-            key={currentTabItem.title} // Unique key to trigger animation
-            initial={{ x: '100%', opacity: 0 }}
-            animate={{ x: '0%', opacity: 1 }}
-            exit={{ x: '-100%', opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            // key={currentTabItem.title} // Unique key to trigger animation
+            // initial={{ x: '100%', opacity: 0 }}
+            // animate={{ x: '0%', opacity: 1 }}
+            // exit={{ x: '-100%', opacity: 0 }}
+            // transition={{ duration: 0.5 }}
           >
             <div className='flex flex-col-reverse md:flex-row gap-y-10 md:justify-between items-center'>
               <div className='w-full md:w-1/2 xl:w-[55%]'>
