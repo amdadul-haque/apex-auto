@@ -7,56 +7,10 @@ import { LuMapPin } from 'react-icons/lu'
 import { Button } from './core'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { nearestShops } from '@/data'
+import { appLinks, nearestShops } from '@/data'
+import { motion } from 'framer-motion'
 
-type Props = {}
-
-const NearestShop = (props: Props) => {
-  
-
-
-  const [loading, setLoading] = useState(true)
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const handlePrevClick = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? nearestShops[0].images.length - 1 : prevIndex - 1
-    )
-    setLoading(true)
-  }
-
-  const handleNextClick = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === nearestShops[0].images.length - 1 ? 0 : prevIndex + 1
-    )
-    setLoading(true)
-  }
-
-
-  // const [currentImageIndexes, setCurrentImageIndexes] = useState(
-  //   nearestShops.map(() => 0)
-  // )
-
-  // const showPrevImage = (index: number) => {
-  //   setCurrentImageIndexes(prevIndexes => {
-  //     const newIndexes = [...prevIndexes]
-  //     newIndexes[index] = (newIndexes[index] > 0) 
-  //       ? newIndexes[index] - 1 
-  //       : nearestShops[index].images.length - 1
-  //     return newIndexes
-  //   })
-  // }
-
-  // const showNextImage = (index: number) => {
-  //   setCurrentImageIndexes(prevIndexes => {
-  //     const newIndexes = [...prevIndexes]
-  //     newIndexes[index] = (newIndexes[index] < nearestShops[index].images.length - 1) 
-  //       ? newIndexes[index] + 1 
-  //       : 0
-  //     return newIndexes
-  //   })
-  // }
-
+const NearestShop = () => {
   const [currentImageIndexes, setCurrentImageIndexes] = useState(
     nearestShops.map(() => 0)
   )
@@ -104,36 +58,43 @@ const NearestShop = (props: Props) => {
   return (
     <div id='shops' className='bg-[#EBEBEB] py-16 md:py-20 lg:py-24 xl:py-[120px]'>
       <div className='layout flex flex-col gap-8 md:gap-12 lg:gap-14 xl:gap-[60px]'>
-        <h2 className='section-heading text-black-1'> Find Your Nearest <br />
-          Automotive Restyling Shop</h2>
+        <motion.h2
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className='section-heading text-black-1'> Find your nearest   <br />
+          auto repair shop</motion.h2>
         <div className='flex flex-col gap-10'>
-          {nearestShops.map((shop, index) => (
-            <div key={index} className='bg-white rounded-2xl flex flex-col md:flex-row h-full'>
-
+          {nearestShops.map((shop, shopIndex) => (
+            <motion.div
+              initial={{ y: 80, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              key={shopIndex} className='bg-white rounded-2xl flex flex-col md:flex-row h-full'>
               <div className='md:w-[40%] min-h-full aspect-[520/543] relative'>
                 <button
                   className='size-9 flex items-center justify-center bg-white absolute left-4 top-1/2 -translate-y-1/2 rounded-xl'
-                  onClick={() => showPrevImage(index)}
+                  onClick={() => showPrevImage(shopIndex)}
                 >
                   <BsChevronLeft className='text-black-1 text-xl' />
                 </button>
-                {loadingStates[index] && (
+                {loadingStates[shopIndex] && (
                   <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-gray-100 border border-white   rounded-t-2xl md:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl'>
                     <AiOutlineLoading3Quarters className='absolute inset-0 m-auto text-4xl text-gray-500 animate-spin' />
                   </div>
                 )}
                 <Image
-                  src={shop.images[currentImageIndexes[index]]}
+                  src={shop.images[currentImageIndexes[shopIndex]]}
                   alt='shop'
                   width={520}
                   height={543}
-                  className={`w-full md:w-auto md:h-full aspect-[520/543] object-cover rounded-s-none rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl ${loadingStates[index] ? 'opacity-0' : 'opacity-100'}`}
-                  onLoadingComplete={() => handleLoadingComplete(index)}
+                  className={`w-full md:w-auto md:h-full aspect-[520/543] object-cover rounded-s-none rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl ${loadingStates[shopIndex] ? 'opacity-0' : 'opacity-100'}`}
+                  onLoadingComplete={() => handleLoadingComplete(shopIndex)}
                 />
 
                 <button
                   className='size-9 flex items-center justify-center bg-white absolute right-4 top-1/2 -translate-y-1/2 rounded-xl'
-                  onClick={() => showNextImage(index)}
+                  onClick={() => showNextImage(shopIndex)}
                 >
                   <BsChevronRight className='text-black-1 text-xl' />
                 </button>
@@ -155,7 +116,7 @@ const NearestShop = (props: Props) => {
                           alt='service'
                           width={40}
                           height={40}
-                          className='h-10 xl:h-14'
+                          className={`h-10 xl:h-14 ${index == 0 && 'object-contain'}`}
                         />
                         <p dangerouslySetInnerHTML={{ __html: service.name }} className='text-gray-1 text-[10px] md:text-[12px] xl:text-sm text-center font-medium whitespace-nowrap'></p>
 
@@ -173,7 +134,7 @@ const NearestShop = (props: Props) => {
                         {shop.hours.map((hour, index) => (
                           <p key={index} className='text-gray-1 text-[12px] md:text-sm font-medium !leading-none'>{hour}</p>
                         ))}
-                        <p className='text-gray-1 text-[12px] md:text-sm font-medium !leading-none'>Sunday - <span className='text-red-500'>Closed</span></p>
+                        <p className='text-gray-1 text-[12px] md:text-sm font-medium !leading-none'>{shopIndex == 1 ? 'Sunday' : 'Saturday, Sunday'} - <span className='text-red-500'>Closed</span></p>
                       </div>
                     </div>
                   </div>
@@ -181,35 +142,39 @@ const NearestShop = (props: Props) => {
                     <h3 className='text-black-1 text-lg lg:xl xl:text-2xl !leading-none font-semibold'>Location</h3>
                     <div className='flex gap-1 md:gap-2 mt-4'>
                       <LuMapPin className='min-w-4 xl:w-5 text-gray-1' />
-                      <Link href={shop.location} className='text-gray-1 mt-1 text-[12px] md:text-sm font-medium !leading-none hover:underline underline-offset-2 transition'>View on google map</Link>
+                      <Link href={shop?.location} target='_blank' className='text-gray-1 mt-1 text-[12px] md:text-sm font-medium !leading-none hover:underline underline-offset-2 transition hover:text-primary'>View on Google Maps</Link>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <Button buttonText='Book Your Appointment' />
+                  <Button
+                    buttonText='Book Your Appointment'
+                    buttonLink={shop?.bookingLink}
+                    newTab
+                  />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className='flex justify-center items-center gap-4'>
-          <Link href='https://'>
+          <Link href={appLinks.ios} target='_blank'>
             <Image
               src='/images/common/appstore-black.svg'
               alt='location'
               width={242}
               height={70}
-              className='w-auto h-10 md:h-auto xl:h-[70px]'
+              className='w-auto h-10 md:h-auto xl:h-[70px] hover:scale-[1.02] transition'
             />
           </Link>
-          <Link href='https://'>
+          <Link href={appLinks.android} target='_blank'>
             <Image
               src='/images/common/playstore-black.svg'
               alt='location'
               width={242}
               height={70}
-              className='w-auto h-10 md:h-auto xl:h-[70px]'
+              className='w-auto h-10 md:h-auto xl:h-[70px] hover:scale-[1.02] transition'
             />
           </Link>
         </div>

@@ -1,4 +1,5 @@
 import { AboutUs, Gallery, Hero, NearestShop, RestyleShop } from "@/components";
+import { ScrollToTop } from "@/components/core";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <AboutUs />
       <RestyleShop />
       <Gallery />
+      <ScrollToTop/>
     </main>
   );
 }

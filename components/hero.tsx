@@ -4,6 +4,7 @@ import React from 'react'
 import { FaCheck } from 'react-icons/fa'
 import { Button } from './core'
 import Link from 'next/link'
+import { appLinks } from '@/data'
 
 type Props = {}
 
@@ -20,12 +21,12 @@ const Hero = (props: Props) => {
           <div className='w-full lg:w-[60%] xl:w-[55%]'>
             <div className='pb-6 xl:p-16 !pr-2'>
               {/* <h1 className='text-[64px] font-bold text-white !leading-none'>Trusted Repair Shops, Instant Booking. </h1> */}
-              <h1 className='text-[34px] md:text-[45px] lg:text-[42px] xl:text-[60px] font-bold text-white !leading-none'>Trusted Repair Shops, <br /> Instant Booking. </h1>
+              <h1 className='text-[34px] md:text-[55px] lg:text-[62px] xl:text-[70px] 2xl:text-[80px] font-bold text-white leading-[1.1] lg:w-[150%]'>Trusted Repair Shops, <br /> Instant Booking. </h1>
               <p className='text-white text-base md:text-lg lg:text:xl xl:text-2xl font-medium mt-8 sm:mt-10 md:mt-12 xl:mt-14'>Frustrated with repair shops that never pick up the phone?</p>
               <ul className='flex flex-col gap-3 md:gap-4 lg:gap-5 xl:gap-6 mt-5 md:mt-7 lg:mt-9 max-w-[90%]'>
                 {services.map((item, index) => (
-                  <li key={index} className='flex gap-2 md:gap-3 xl:gap-4 items-center text-white text-base md:text-lg lg:text:xl xl:text-2xl !leading-none font-medium'>
-                    <FaCheck className='text-white xl:text-2xl min-w-[40px]' />
+                  <li key={index} className='flex gap-2 md:gap-3 xl:gap-4 items-center text-white text-base md:text-lg lg:text:xl xl:text-2xl !leading-none'>
+                    <FaCheck className='text-white xl:text-xl min-w-[40px]' />
                     <p className='leading-tight'>
                       {item?.name}
                     </p>
@@ -34,28 +35,29 @@ const Hero = (props: Props) => {
               </ul>
               <Button
                 buttonText='Book Your Appointment'
+                buttonLink='#shops'
                 isSecondary
-                handleOnlick={() => console.log('Button clicked')}
                 className='mt-7 md:mt-9 xl:mt-[44px]'
+                
               />
             </div>
             <div className='flex gap-3 pb-5 md:pb-6'>
-              <Link href="#">
+              <Link href={appLinks.android} target='_blank'>
                 <Image
                   src='/images/common/playstore-white.svg'
                   width={165}
                   height={48}
                   alt='play store'
-                  className='w-auto h-12'
+                  className='w-auto h-12 hover:scale-[1.03] transition'
                 />
               </Link>
-              <Link href="#"  >
+              <Link href={appLinks.ios} target='_blank' >
                 <Image
                   src='/images/common/appstore-white.svg'
                   width={165}
                   height={48}
                   alt='app store'
-                  className='w-auto h-12'
+                  className='w-auto h-12 hover:scale-[1.03] transition'
                 />
               </Link>
 

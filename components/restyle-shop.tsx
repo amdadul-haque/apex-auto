@@ -4,9 +4,10 @@ import React, { useEffect, useState } from 'react'
 import { Button } from './core'
 import { FaCheck } from 'react-icons/fa'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { serviceSteps } from '@/data'
+import { appLinks, serviceSteps } from '@/data'
 import { ServiceStepsInterface } from '@/modes'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -63,17 +64,17 @@ const RestyleShop = (props: Props) => {
             ))}
           </div>
           <motion.div
-            // key={currentTabItem.title} // Unique key to trigger animation
-            // initial={{ x: '100%', opacity: 0 }}
-            // animate={{ x: '0%', opacity: 1 }}
-            // exit={{ x: '-100%', opacity: 0 }}
-            // transition={{ duration: 0.5 }}
+          // key={currentTabItem.title} // Unique key to trigger animation
+          // initial={{ x: '100%', opacity: 0 }}
+          // animate={{ x: '0%', opacity: 1 }}
+          // exit={{ x: '-100%', opacity: 0 }}
+          // transition={{ duration: 0.5 }}
           >
-            <div className='flex flex-col-reverse md:flex-row gap-y-10 md:justify-between items-center'>
+            <div className='flex flex-col-reverse md:flex-row gap-10 md:justify-between items-center'>
               <div className='w-full md:w-1/2 xl:w-[55%]'>
                 <div className='flex flex-col gap-5 md:gap-[25px] xl:gap-[30px]'>
-                  {/* <h3 className='text-black-1 text-2xl md:text-[28px] lg:text-[32px] font-semibold !leading-none'>Benefits of application</h3> */}
-                  <ul className='space-y-6'>
+                  <h3 className='text-black-1 text-2xl md:text-[28px] lg:text-[32px] xl:text-4xl font-bold !leading-none'>{currentTabItem.title}</h3>
+                  <ul className='space-y-6 mt-8'>
                     {currentTabItem.benefits.map((item, index) => (
                       <li key={index} className='text-gray-1 text-sm md:text-base xl:text-xl flex gap-2'>
                         <FaCheck className='w-5 min-w-[20px] mt-[3px]' />
@@ -84,10 +85,26 @@ const RestyleShop = (props: Props) => {
                     ))}
                   </ul>
                   <div>
-                    <Button
-                      buttonText='Book appointment'
-                      className='mt-2'
-                    />
+                    <div className='flex items-center gap-4'>
+                      <Link href={appLinks.ios} target='_blank'>
+                        <Image
+                          src='/images/common/appstore-black.svg'
+                          alt='location'
+                          width={242}
+                          height={70}
+                          className='w-auto h-10 md:h-auto xl:h-[70px] hover:scale-[1.02] transition'
+                        />
+                      </Link>
+                      <Link href={appLinks.android} target='_blank'>
+                        <Image
+                          src='/images/common/playstore-black.svg'
+                          alt='location'
+                          width={242}
+                          height={70}
+                          className='w-auto h-10 md:h-auto xl:h-[70px] hover:scale-[1.02] transition'
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

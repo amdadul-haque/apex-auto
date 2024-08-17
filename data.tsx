@@ -1,32 +1,37 @@
 import { FaTelegramPlane } from "react-icons/fa";
-import { FaLinkedinIn, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn, FaInstagram, FaXTwitter, FaTiktok } from "react-icons/fa6";
 import { ServiceStepsInterface } from "./modes";
 
 export const socials = [
   {
-    icon: <FaLinkedinIn />,
-    link: "/",
-  },
-  {
     icon: <FaInstagram />,
-    link: "/",
+    link: "https://www.instagram.com/apexautoapp",
   },
   {
     icon: <FaXTwitter />,
-    link: "/",
+    link: "https://x.com/apexautoapp"
   },
   {
-    icon: <FaTelegramPlane />,
-    link: "/",
+    icon: <FaTiktok />,
+    link: "https://www.tiktok.com/@apexautoapp"
   },
+  // {
+  //   icon: <FaLinkedinIn />,
+  //   link: "/",
+  // },
+  // {
+  //   icon: <FaTelegramPlane />,
+  //   link: "/",
+  // },
 ];
 
 
 export const nearestShops = [
   {
-    name: "Momos Garage",
+    name: "Momo's Garage",
     description: "Formally Rob Black Automotive, Momo’s Garage continues the tradition of providing reliable high-quality workmanship using licensed technicians who care. We service all makes and models. ",
     images: ["/images/nearest-shop/1.png", "/images/nearest-shop/2.png", "/images/nearest-shop/3.png"],
+    bookingLink: "https://apexautoapp.com/momosgarage",
     services: [
       {
         icon: "/images/nearest-shop/services/1.svg",
@@ -57,13 +62,15 @@ export const nearestShops = [
         name: "Wheels & <br> Tires"
       },
     ],
-    hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM', ''],
-    location: ""
+    hours: ['Monday to Friday - 8 AM - 5 PM'],
+    location: "https://www.google.com/maps/place/Momo's+Garage+Inc./@43.6069665,-79.5799426,17z/data=!3m2!4b1!5s0x882b47ec5db06631:0xf4b8ceb27e8ccc41!4m6!3m5!1s0x882b47ec8b1a501b:0xb59a799995c5bd50!8m2!3d43.6069665!4d-79.5799426!16s%2Fg%2F1tcv6z1v?entry=ttu"
   },
+
   {
     name: "Euromatic",
     description: "We specialize in servicing top European brands like Mercedes, BMW, Audi, Jaguar and more.",
     images: ["/images/nearest-shop/3.png", "/images/nearest-shop/2.png", "/images/nearest-shop/1.png"],
+    bookingLink: "https://apexautoapp.com/euromatic",
     services: [
       {
         icon: "/images/nearest-shop/services/1.svg",
@@ -94,13 +101,15 @@ export const nearestShops = [
         name: "Wheels & <br> Tires"
       },
     ],
-    hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM', ''],
-    location: ""
+    hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM'],
+    location: "https://www.google.com/maps/place/Euromatic+Auto+Repair/@43.6655288,-79.6450248,17z/data=!3m1!4b1!4m6!3m5!1s0x882b3e1eb0ac9321:0x90b3aadf55051c45!8m2!3d43.6655288!4d-79.6450248!16s%2Fg%2F11c3sw1tm1?entry=ttu"
   },
+
   {
     name: "Dundas 427 Automotive",
     description: "Since 1998, Dundas 427 Automotive has taken pride in providing you with honest and efficient auto repair service in the Mississauga area.  We are a family owned and operated business and our priority is exceeding your expectations. We service all makes and models. ",
     images: ["/images/nearest-shop/2.png", "/images/nearest-shop/3.png", "/images/nearest-shop/1.png"],
+    bookingLink: "https://apexautoapp.com/dundas427",
     services: [
       {
         icon: "/images/nearest-shop/services/1.svg",
@@ -131,8 +140,8 @@ export const nearestShops = [
         name: "Wheels & <br> Tires"
       },
     ],
-    hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM', ''],
-    location: ""
+    hours: ['Monday to Friday - 8 AM–6 PM'],
+    location: "https://www.google.com/maps/place/Dundas+427+Automotive/@43.6221264,-79.5721785,17z/data=!3m2!4b1!5s0x882b380883330af5:0x4bf04ae0f64ae66e!4m6!3m5!1s0x882b380647a8bcc5:0x84d17cc6cbf8c3c0!8m2!3d43.6221264!4d-79.5721785!16s%2Fg%2F1tdyw_h2?entry=ttu"
   },
 ]
 
@@ -174,6 +183,7 @@ export const serviceSteps: ServiceStepsInterface[] = [
     title: "Message mechanics",
     image: "/images/restyle/2.png",
   },
+
   {
     benefits: [
       {
@@ -192,6 +202,7 @@ export const serviceSteps: ServiceStepsInterface[] = [
     title: "Track Vehicle Service History",
     image: "/images/restyle/3.png",
   },
+  
   {
     benefits: [
       {
@@ -229,3 +240,9 @@ export const serviceSteps: ServiceStepsInterface[] = [
     image: "/images/restyle/5.png",
   },
 ]
+
+
+export const appLinks = {
+  ios: "https://apps.apple.com/in/app/apex-auto/id64693384384",
+  android: "https://play.google.com/store/apps/details?id=com.apex.customerapp&hl=en_US"
+}

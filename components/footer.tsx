@@ -1,4 +1,4 @@
-import { socials } from '@/data'
+import { appLinks, socials } from '@/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
               <Link href='/' passHref>
                 <Image src='/images/logo-white.svg' width={223} height={66} alt='Apex Autos' className='w-auto xl:w-[223px]' />
               </Link>
-              <p className='text-white text-sm md:text-base mt-5 md:mt-6 xl:mt-8 max-w-[500px] lg:max-w-[630px]'>Lorem ipsum dolor sit amet consectetur adipiscing elit ut elit tellus luctus nec ullamcorper mattis pulvinar dapibus leo.</p>
+              <p className='text-white text-sm md:text-base mt-5 md:mt-6 xl:mt-8 max-w-[500px] lg:max-w-[630px]'>At Apex Auto, we believe in revolutionizing the way car owners connect with repair shops and mechanics. Our mission is to provide a seamless, trustworthy, and efficient experience for every car owner. Whether you need a routine service or emergency repairs, Apex Auto is here to make sure you find the best service with just a few taps.</p>
             </div>
             <div>
               <div className='flex justify-start md:justify-end items-center gap-3 md:gap-4'>
@@ -30,22 +30,22 @@ const Footer = (props: Props) => {
                 ))}
               </div>
               <div className='flex items-center gap-4 mt-5 md:mt-6 xl:mt-8'>
-                <Link href='https://'>
+                <Link href={appLinks.ios} target='_blank'>
                   <Image
                     src='/images/common/appstore-white.svg'
                     alt='location'
                     width={243}
                     height={70}
-                    className='w-auto h-[40px] md:h-auto xl:h-[70px]'
+                    className='w-auto h-[40px] md:h-auto xl:h-[70px] hover:scale-[1.02] transition'
                   />
                 </Link>
-                <Link href='https://'>
+                <Link href={appLinks.android} target='_blank'>
                   <Image
                     src='/images/common/playstore-white.svg'
                     alt='playstore'
                     width={243}
                     height={70}
-                    className='w-auto h-[40px] md:h-auto xl:h-[70px]'
+                    className='w-auto h-[40px] md:h-auto xl:h-[70px] hover:scale-[1.02] transition'
                   />
                 </Link>
               </div>

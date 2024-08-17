@@ -18,12 +18,12 @@ const AboutUs = (props: Props) => {
           <p className='text-base leading-snug text-white'>At Apex Auto, we believe in revolutionizing the way car owners connect with repair shops and mechanics. Our mission is to provide a seamless, trustworthy, and efficient experience for every car owner. Whether you need a routine service or emergency repairs, Apex Auto is here to make sure you find the best service with just a few taps.</p>
           <ul className='flex flex-col gap-3 md:gap-4 lg:gap-5 xl:gap-6'>
             {services.map((item, index) => (
-              <p key={index} className='flex gap-2 md:gap-3 items-center text-white text-base md:text-lg lg:text:xl xl:text-[22px] !leading-tight'>
+              <li key={index} className='flex gap-2 md:gap-3 items-center text-white text-base md:text-lg lg:text:xl xl:text-[22px] !leading-tight'>
                 <FaCheck className='text-white xl:text-2xl min-w-8' />
                 <p className='font-normal'>
                   <span className='font-medium'>{item?.title}</span>{item?.description}
                 </p>
-              </p>
+              </li>
             ))}
           </ul>
         </div>

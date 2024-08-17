@@ -40,7 +40,7 @@ const Navbar = (props: Props) => {
           <div className='hidden lg:flex gap-4'>
             {socials.map((item, index) => (
               <Link key={index} href={item.link} passHref>
-                <span className=' text-black-1 text-xl aspect-square hover:text-primary transition duration-300'>{item?.icon}</span>
+                <span className=' text-black-1 text-xl aspect-square hover:text-primary transition duration-300 flex p-2 hover:bg-primary/10 rounded-lg border border-transparent hover:border-primary/50'>{item?.icon}</span>
               </Link>
             ))}
           </div>
