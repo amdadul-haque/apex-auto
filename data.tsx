@@ -26,42 +26,44 @@ export const socials = [
 ];
 
 
+const shopServices = [
+  {
+    icon: "/images/nearest-shop/services/1.svg",
+    name: "Brakes"
+  },
+  {
+    icon: "/images/nearest-shop/services/2.svg",
+    name: "Diagnostics & <br> Inspection"
+  },
+  {
+    icon: "/images/nearest-shop/services/3.svg",
+    name: "Fluid <br> Services"
+  },
+  {
+    icon: "/images/nearest-shop/services/4.svg",
+    name: "General <br> Maintenance"
+  },
+  {
+    icon: "/images/nearest-shop/services/5.svg",
+    name: "Starting & <br> Charging"
+  },
+  {
+    icon: "/images/nearest-shop/services/6.svg",
+    name: "Steering & <br> Suspension"
+  },
+  {
+    icon: "/images/nearest-shop/services/7.svg",
+    name: "Wheels & <br> Tires"
+  },
+]
+
 export const nearestShops = [
   {
     name: "Momo's Garage",
     description: "Formally Rob Black Automotive, Momo’s Garage continues the tradition of providing reliable high-quality workmanship using licensed technicians who care. We service all makes and models. ",
-    images: ["/images/nearest-shop/1.png", "/images/nearest-shop/2.png", "/images/nearest-shop/3.png"],
+    images: ["/images/nearest-shop/momo/1.jpg", "/images/nearest-shop/momo/2.jpg", "/images/nearest-shop/momo/3.jpg", "/images/nearest-shop/momo/4.jpg"],
     bookingLink: "https://apexautoapp.com/momosgarage",
-    services: [
-      {
-        icon: "/images/nearest-shop/services/1.svg",
-        name: "Brakes"
-      },
-      {
-        icon: "/images/nearest-shop/services/2.svg",
-        name: "Diagnostics & <br/> Inspection"
-      },
-      {
-        icon: "/images/nearest-shop/services/3.svg",
-        name: "Fluid <br> Services"
-      },
-      {
-        icon: "/images/nearest-shop/services/4.svg",
-        name: "General <br> Maintenance"
-      },
-      {
-        icon: "/images/nearest-shop/services/5.svg",
-        name: "Starting & <br> Charging"
-      },
-      {
-        icon: "/images/nearest-shop/services/6.svg",
-        name: "Steering & <br> Suspension"
-      },
-      {
-        icon: "/images/nearest-shop/services/7.svg",
-        name: "Wheels & <br> Tires"
-      },
-    ],
+    services: shopServices,
     hours: ['Monday to Friday - 8 AM - 5 PM'],
     location: "https://www.google.com/maps/place/Momo's+Garage+Inc./@43.6069665,-79.5799426,17z/data=!3m2!4b1!5s0x882b47ec5db06631:0xf4b8ceb27e8ccc41!4m6!3m5!1s0x882b47ec8b1a501b:0xb59a799995c5bd50!8m2!3d43.6069665!4d-79.5799426!16s%2Fg%2F1tcv6z1v?entry=ttu"
   },
@@ -69,38 +71,9 @@ export const nearestShops = [
   {
     name: "Euromatic",
     description: "We specialize in servicing top European brands like Mercedes, BMW, Audi, Jaguar and more.",
-    images: ["/images/nearest-shop/3.png", "/images/nearest-shop/2.png", "/images/nearest-shop/1.png"],
+    images: ["/images/nearest-shop/euromatic/1.jpg", "/images/nearest-shop/euromatic/2.jpg", "/images/nearest-shop/euromatic/3.jpg", "/images/nearest-shop/euromatic/3.jpg"],
     bookingLink: "https://apexautoapp.com/euromatic",
-    services: [
-      {
-        icon: "/images/nearest-shop/services/1.svg",
-        name: "Brakes"
-      },
-      {
-        icon: "/images/nearest-shop/services/2.svg",
-        name: "Diagnostics & <br> Inspection"
-      },
-      {
-        icon: "/images/nearest-shop/services/3.svg",
-        name: "Fluid <br> Services"
-      },
-      {
-        icon: "/images/nearest-shop/services/4.svg",
-        name: "General <br> Maintenance"
-      },
-      {
-        icon: "/images/nearest-shop/services/5.svg",
-        name: "Starting & <br> Charging"
-      },
-      {
-        icon: "/images/nearest-shop/services/6.svg",
-        name: "Steering & <br> Suspension"
-      },
-      {
-        icon: "/images/nearest-shop/services/7.svg",
-        name: "Wheels & <br> Tires"
-      },
-    ],
+    services: shopServices,
     hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM'],
     location: "https://www.google.com/maps/place/Euromatic+Auto+Repair/@43.6655288,-79.6450248,17z/data=!3m1!4b1!4m6!3m5!1s0x882b3e1eb0ac9321:0x90b3aadf55051c45!8m2!3d43.6655288!4d-79.6450248!16s%2Fg%2F11c3sw1tm1?entry=ttu"
   },
@@ -108,7 +81,7 @@ export const nearestShops = [
   {
     name: "Dundas 427 Automotive",
     description: "Since 1998, Dundas 427 Automotive has taken pride in providing you with honest and efficient auto repair service in the Mississauga area.  We are a family owned and operated business and our priority is exceeding your expectations. We service all makes and models. ",
-    images: ["/images/nearest-shop/2.png", "/images/nearest-shop/3.png", "/images/nearest-shop/1.png"],
+    images: ["/images/nearest-shop/dundas/1.jpg", "/images/nearest-shop/dundas/2.jpg", "/images/nearest-shop/dundas/3.jpg", "/images/nearest-shop/dundas/3.jpg"],
     bookingLink: "https://apexautoapp.com/dundas427",
     services: [
       {
@@ -165,6 +138,7 @@ export const serviceSteps: ServiceStepsInterface[] = [
     title: "Book appointments",
     image: "/images/restyle/1.png",
   },
+
   {
     benefits: [
       {
@@ -202,7 +176,7 @@ export const serviceSteps: ServiceStepsInterface[] = [
     title: "Track Vehicle Service History",
     image: "/images/restyle/3.png",
   },
-  
+
   {
     benefits: [
       {
@@ -221,6 +195,7 @@ export const serviceSteps: ServiceStepsInterface[] = [
     title: "Request Estimates",
     image: "/images/restyle/4.png",
   },
+
   {
     benefits: [
       {

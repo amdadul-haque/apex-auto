@@ -73,7 +73,7 @@ const NearestShop = () => {
               key={shopIndex} className='bg-white rounded-2xl flex flex-col md:flex-row h-full'>
               <div className='md:w-[40%] min-h-full aspect-[520/543] relative'>
                 <button
-                  className='size-9 flex items-center justify-center bg-white absolute left-4 top-1/2 -translate-y-1/2 rounded-xl'
+                  className='size-9 flex items-center justify-center bg-white absolute left-4 top-1/2 -translate-y-1/2 rounded-xl z-50'
                   onClick={() => showPrevImage(shopIndex)}
                 >
                   <BsChevronLeft className='text-black-1 text-xl' />
