@@ -20,7 +20,7 @@ const Navbar = (props: Props) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   return (
-    <header className='py-2 md:py-3 xl:py-4 relative'>
+    <header className='py-3 md:py-4 xl:py-5 relative'>
       <nav className='layout-hero'>
         <div className='flex justify-between items-center'>
           <Link href={'/'}>
@@ -52,43 +52,39 @@ const Navbar = (props: Props) => {
         </div>
       </nav>
 
-      <div className={`${showMobileMenu ? 'fixed' : 'hidden'} top-0 h-screen w-screen bg-black/50 z-20`}>
-        <div className={`w-full h-full flex justify-end `}>
-          <div>
+      <div className={` ${showMobileMenu ? 'fixed' : 'hidden'} top-0 h-screen w-screen bg-black/50 z-20`}>
+      </div>
 
-          </div>
-          <div className={`px-8 pl-8 py-5 bg-white w-auto h-full ${showMobileMenu ? 'translate-x-0' : '-translate-x-full'} transition duration-1000`}>
+      <div className={`px-8 pl-8 py-5 bg-white w-auto fixed top-0 right-0 h-full ${showMobileMenu ? 'translate-x-0' : 'translate-x-[100%]'} transition duration-300 z-[21]`}>
 
-            <div className='w-full flex justify-end'>
-              <button
-                className='p-2 bg-black/10 rounded-full'
-                onClick={() => { setShowMobileMenu(!showMobileMenu) }}
-              >
-                <FaXmark className='text-black-1 text-xl' />
-              </button>
+        <div className='w-full flex justify-end'>
+          <button
+            className='p-2 bg-black/10 rounded-full'
+            onClick={() => { setShowMobileMenu(!showMobileMenu) }}
+          >
+            <FaXmark className='text-black-1 text-xl' />
+          </button>
+        </div>
+
+        <div className='flex flex-col gap-3 pt-5'>
+          {navLinks.map((item, index) => (
+            <div onClick={() => { setShowMobileMenu(!showMobileMenu) }}>
+              <Link href={item.path || '/'} key={index}>
+                <span className='block text-black-1'>{item?.name}</span>
+              </Link>
             </div>
+          ))
+          }
+        </div>
 
-            <div className='flex flex-col gap-3 pt-5'>
-              {navLinks.map((item, index) => (
-                <div onClick={() => { setShowMobileMenu(!showMobileMenu) }}>
-                  <Link href={item.path || '/'} key={index}>
-                    <span className='block text-black-1'>{item?.name}</span>
-                  </Link>
-                </div>
-              ))
-              }
-            </div>
-
-            <div className='flex gap-3 mt-5'>
-              {socials.map((item, index) => (
-                <Link key={index} href
-                  ={item.link} passHref>
-                  <span className=' text-black-1 text-xl aspect-square hover:text-primary transition duration-300'>{item?.icon}</span>
-                </Link>
-              ))
-              }
-            </div>
-          </div>
+        <div className='flex gap-3 mt-5'>
+          {socials.map((item, index) => (
+            <Link key={index} href
+              ={item.link} passHref>
+              <span className=' text-black-1 text-xl aspect-square hover:text-primary transition duration-300'>{item?.icon}</span>
+            </Link>
+          ))
+          }
         </div>
       </div>
     </header>
