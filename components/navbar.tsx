@@ -20,11 +20,11 @@ const Navbar = (props: Props) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   return (
-    <header className='py-4 md:py-5 xl:py-6 relative'>
+    <header className='py-2 md:py-3 xl:py-4 relative'>
       <nav className='layout-hero'>
         <div className='flex justify-between items-center'>
           <Link href={'/'}>
-            <Image src='/images/logo.svg' width={160} height={48} alt='logo' className='w-auto h-9 md:h-10 xl:h-12' />
+            <Image src='/images/logo.svg' width={160} height={48} alt='logo' className='w-auto h-10 xl:h-12' />
           </Link>
           <div className='items-center hidden md:flex'>
             {

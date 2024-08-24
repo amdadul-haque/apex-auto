@@ -15,16 +15,12 @@
   @apply text-3xl md:text-[34px] lg:text-[46px] xl:text-6xl font-semibold text-center leading-none;
 }
 
-/* .white-text-24{
-  @apply text-base md:text-lg lg:text:xl xl:text-2xl;
-} */
 
 .hero {
   background: linear-gradient(to right, rgba(0, 25, 148, 0.8), rgba(0, 25, 148, 0.5)), url('../public/images/hero/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* aspect-ratio: 1920/804; */
 }
 
 .about {
@@ -32,7 +28,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* aspect-ratio: 1920/820; */
 }
 
 @media screen and (max-width: 767px) {

@@ -56,15 +56,15 @@ const NearestShop = () => {
     })
   }
   return (
-    <div id='shops' className='bg-[#EBEBEB] py-16 md:py-20 lg:py-24 xl:py-[120px]'>
+    <div  className='bg-[#EBEBEB] py-8 md:py-12 lg:py-14 xl:py-[60px]'>
       <div className='layout flex flex-col gap-8 md:gap-12 lg:gap-14 xl:gap-[60px]'>
         <motion.h2
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className='section-heading text-black-1'> Find your nearest   <br />
-          auto repair shop</motion.h2>
-        <div className='flex flex-col gap-10'>
+          className='section-heading text-black-1 capitalize'> Find your nearest   <br />
+          trusted repair shop</motion.h2>
+        <div id='shops' className='flex flex-col gap-10'>
           {nearestShops.map((shop, shopIndex) => (
             <motion.div
               initial={{ y: 80, opacity: 0 }}
@@ -88,7 +88,7 @@ const NearestShop = () => {
                   alt='shop'
                   width={520}
                   height={543}
-                  className={`w-full md:w-auto md:h-full aspect-[520/543] object-cover rounded-s-none rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl ${loadingStates[shopIndex] ? 'opacity-0' : 'opacity-100'}`}
+                  className={`w-full md:w-auto md:h-full aspect-[520/543] object-cover ${shopIndex === 0 && 'object-right'} rounded-s-none rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl lg:rounded-bl-2xl  ${loadingStates[shopIndex] ? 'opacity-0' : 'opacity-100'}`}
                   onLoadingComplete={() => handleLoadingComplete(shopIndex)}
                 />
 
@@ -134,7 +134,9 @@ const NearestShop = () => {
                         {shop.hours.map((hour, index) => (
                           <p key={index} className='text-gray-1 text-[12px] md:text-sm font-medium !leading-none'>{hour}</p>
                         ))}
-                        <p className='text-gray-1 text-[12px] md:text-sm font-medium !leading-none'>{shopIndex == 1 ? 'Sunday' : 'Saturday, Sunday'} - <span className='text-red-500'>Closed</span></p>
+                        {shop?.closeDays.map((day, index) => (
+                          <p className='text-gray-1 text-[12px] md:text-sm font-medium !leading-none'>{day} - <span className='text-red-500'>Closed</span></p>
+                        ))}
                       </div>
                     </div>
                   </div>

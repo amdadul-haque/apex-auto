@@ -65,6 +65,7 @@ export const nearestShops = [
     bookingLink: "https://apexautoapp.com/momosgarage",
     services: shopServices,
     hours: ['Monday to Friday - 8 AM - 5 PM'],
+    closeDays: ['Saturday', 'Sunday'],
     location: "https://www.google.com/maps/place/Momo's+Garage+Inc./@43.6069665,-79.5799426,17z/data=!3m2!4b1!5s0x882b47ec5db06631:0xf4b8ceb27e8ccc41!4m6!3m5!1s0x882b47ec8b1a501b:0xb59a799995c5bd50!8m2!3d43.6069665!4d-79.5799426!16s%2Fg%2F1tcv6z1v?entry=ttu"
   },
 
@@ -75,6 +76,7 @@ export const nearestShops = [
     bookingLink: "https://apexautoapp.com/euromatic",
     services: shopServices,
     hours: ['Monday to Friday - 9 AM–6:30 PM', 'Saturday - 9 AM–3 PM'],
+    closeDays: ['Sunday'],
     location: "https://www.google.com/maps/place/Euromatic+Auto+Repair/@43.6655288,-79.6450248,17z/data=!3m1!4b1!4m6!3m5!1s0x882b3e1eb0ac9321:0x90b3aadf55051c45!8m2!3d43.6655288!4d-79.6450248!16s%2Fg%2F11c3sw1tm1?entry=ttu"
   },
 
@@ -83,37 +85,9 @@ export const nearestShops = [
     description: "Since 1998, Dundas 427 Automotive has taken pride in providing you with honest and efficient auto repair service in the Mississauga area.  We are a family owned and operated business and our priority is exceeding your expectations. We service all makes and models. ",
     images: ["/images/nearest-shop/dundas/1.jpg", "/images/nearest-shop/dundas/2.jpg", "/images/nearest-shop/dundas/3.jpg", "/images/nearest-shop/dundas/3.jpg"],
     bookingLink: "https://apexautoapp.com/dundas427",
-    services: [
-      {
-        icon: "/images/nearest-shop/services/1.svg",
-        name: "Brakes"
-      },
-      {
-        icon: "/images/nearest-shop/services/2.svg",
-        name: "Diagnostics & <br> Inspection"
-      },
-      {
-        icon: "/images/nearest-shop/services/3.svg",
-        name: "Fluid <br> Services"
-      },
-      {
-        icon: "/images/nearest-shop/services/4.svg",
-        name: "General <br> Maintenance"
-      },
-      {
-        icon: "/images/nearest-shop/services/5.svg",
-        name: "Starting & <br> Charging"
-      },
-      {
-        icon: "/images/nearest-shop/services/6.svg",
-        name: "Steering & <br> Suspension"
-      },
-      {
-        icon: "/images/nearest-shop/services/7.svg",
-        name: "Wheels & <br> Tires"
-      },
-    ],
+    services: shopServices,
     hours: ['Monday to Friday - 8 AM–6 PM'],
+    closeDays: ['Saturday', 'Sunday'],
     location: "https://www.google.com/maps/place/Dundas+427+Automotive/@43.6221264,-79.5721785,17z/data=!3m2!4b1!5s0x882b380883330af5:0x4bf04ae0f64ae66e!4m6!3m5!1s0x882b380647a8bcc5:0x84d17cc6cbf8c3c0!8m2!3d43.6221264!4d-79.5721785!16s%2Fg%2F1tdyw_h2?entry=ttu"
   },
 ]
@@ -218,6 +192,6 @@ export const serviceSteps: ServiceStepsInterface[] = [
 
 
 export const appLinks = {
-  ios: "https://apps.apple.com/in/app/apex-auto/id64693384384",
+  ios: "https://apps.apple.com/in/app/apex-auto/id6469338438",
   android: "https://play.google.com/store/apps/details?id=com.apex.customerapp&hl=en_US"
 }

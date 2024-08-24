@@ -9,7 +9,7 @@ type Props = {}
 const Gallery = (props: Props) => {
   const galleryImages = [
     '/images/gallery/1.png',
-    '/images/gallery/2.png',
+    '/images/gallery/2.jpg',
     '/images/gallery/3.png',
     '/images/gallery/4.png',
     '/images/gallery/5.png',
@@ -49,10 +49,9 @@ const Gallery = (props: Props) => {
               <Image
                 src={image}
                 alt='gallery'
-                layout='responsive'
                 width={1000}
                 height={1000}
-                className='object-cover rounded-xl lg:rounded-2xl'
+                className='w-full h-full object-cover rounded-xl lg:rounded-2xl'
               />
               <div className='hidden group-hover:flex absolute inset-0 bg-black bg-opacity-50 items-center justify-center rounded-xl lg:rounded-2xl transition duration-300 cursor-pointer'
                 onClick={() => {

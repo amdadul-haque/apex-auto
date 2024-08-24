@@ -17,10 +17,9 @@ const Hero = (props: Props) => {
   return (
     <div className='hero '>
       <div className='flex flex-col md:flex-row items-center overflow-hidden'>
-        <div className='layout-hero flex flex-col gap-y-10 lg:flex-row justify-between pt-16'>
+        <div className='layout-hero flex flex-col gap-y-10 lg:flex-row justify-between pt-8'>
           <div className='w-full lg:w-[60%] xl:w-[55%]'>
-            <div className='pb-6 xl:p-16 !pr-2'>
-              {/* <h1 className='text-[64px] font-bold text-white !leading-none'>Trusted Repair Shops, Instant Booking. </h1> */}
+            <div className='pb-6 xl:px-16 xl:pt-8 !pr-2'>
               <h1 className='text-[34px] md:text-[55px] lg:text-[62px] xl:text-[70px] 2xl:text-[80px] font-bold text-white leading-[1.1] lg:w-[150%]'>Trusted Repair Shops, <br /> Instant Booking. </h1>
               <p className='text-white text-base md:text-lg lg:text:xl xl:text-2xl font-medium mt-8 sm:mt-10 md:mt-12 xl:mt-14'>Frustrated with repair shops that never pick up the phone?</p>
               <ul className='flex flex-col gap-3 md:gap-4 lg:gap-5 xl:gap-6 mt-5 md:mt-7 lg:mt-9 max-w-[90%]'>

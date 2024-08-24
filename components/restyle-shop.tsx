@@ -74,7 +74,7 @@ const RestyleShop = (props: Props) => {
               <div className='w-full md:w-1/2 xl:w-[55%]'>
                 <div className='flex flex-col gap-5 md:gap-[25px] xl:gap-[30px]'>
                   <h3 className='text-black-1 text-2xl md:text-[28px] lg:text-[32px] xl:text-4xl font-bold !leading-none'>{currentTabItem.title}</h3>
-                  <ul className='space-y-6 mt-8'>
+                  <ul className='space-y-5'>
                     {currentTabItem.benefits.map((item, index) => (
                       <li key={index} className='text-gray-1 text-sm md:text-base xl:text-xl flex gap-2'>
                         <FaCheck className='w-5 min-w-[20px] mt-[3px]' />
